@@ -1,0 +1,85 @@
+**Dominando os Seletores COBOL: Uma Jornada pela Programação Estruturada**
+
+---
+
+**1. Seletores Simples**
+
+Os seletores simples no COBOL são utilizados para acessar campos individuais em registros. Eles são indicados pela posição numérica do campo dentro do registro.
+
+**Exemplo:**
+```cobol
+01 CLIENTE.
+   05 NOME          PIC X(30).
+   05 IDADE         PIC 99.
+```
+
+Para acessar o campo "NOME" do registro "CLIENTE", usamos o seletor simples:
+
+```cobol
+MOVE 'João' TO CLIENTE-NOME.
+```
+
+---
+
+**2. Seletores Indexados**
+
+Os seletores indexados permitem acesso a itens em tabelas ou arrays. Eles são indicados pela posição numérica do item na tabela.
+
+**Exemplo:**
+```cobol
+01 VETOR PIC X(10) OCCURS 5 TIMES.
+```
+
+Acessando o terceiro item no vetor:
+
+```cobol
+MOVE 'Dado' TO VETOR(3).
+```
+
+---
+
+**3. Seletores Condicional**
+
+Os seletores condicionais permitem acesso a campos com base em condições lógicas. Eles são utilizados em estruturas de decisão como o IF.
+
+**Exemplo:**
+```cobol
+01 CLIENTE.
+   05 STATUS        PIC X.
+
+IF CLIENTE-STATUS = 'A'
+    DISPLAY 'Cliente Ativo'
+ELSE
+    DISPLAY 'Cliente Inativo'.
+```
+
+---
+
+**4. Seletores de Grupo**
+
+Os seletores de grupo são utilizados para acessar um grupo de itens relacionados dentro de um registro.
+
+**Exemplo:**
+```cobol
+01 FUNCIONARIO.
+   05 NOME          PIC X(30).
+   05 DEPARTAMENTO.
+      10 CODIGO     PIC 99.
+      10 NOME-DEP   PIC X(20).
+```
+
+Para acessar o código do departamento do funcionário:
+
+```cobol
+MOVE 10 TO FUNCIONARIO-DEPARTAMENTO-CODIGO.
+```
+
+---
+
+**Conclusão**
+
+Dominar os seletores COBOL é essencial para manipular dados de forma eficiente. Compreender esses conceitos permite desenvolver programas mais claros e robustos, facilitando a manutenção e o entendimento do código.
+
+Continue praticando e explorando esses seletores em seus projetos para aprimorar suas habilidades em COBOL.
+
+---
